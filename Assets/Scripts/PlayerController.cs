@@ -31,13 +31,14 @@ public class PlayerController : MonoBehaviour
         }
 
         // Code to make jump animation
-        float jump = Input.GetAxisRaw("Vertical");
-        if (jump > 0)
+        //float jump = Input.GetAxisRaw("Jump");
+                                                                             if (Input.GetKeyDown(KeyCode.Space))
+      //if (jump > 0)
         {
             animator.SetBool("isJump", true);
-        }else
+        }else                                                                if (Input.GetKeyUp(KeyCode.Space))
         {
-            animator.SetBool("isJump", false);
+           animator.SetBool("isJump", false);
         }
 
     }
