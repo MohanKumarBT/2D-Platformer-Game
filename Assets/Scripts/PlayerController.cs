@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
         float speed = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(speed));
         Vector3 scale = transform.localScale;
@@ -19,5 +20,25 @@ public class PlayerController : MonoBehaviour
             scale.x = Mathf.Abs(scale.x);
         }
         transform.localScale = scale;
+
+        // Code to make crouch animation 
+        if(Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            animator.SetBool("isCrouch", true);
+        }else if(Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            animator.SetBool("isCrouch", false);
+        }
+
+        // Code to make jump animation
+        float jump = Input.GetAxisRaw("Vertical");
+        if (jump > 0)
+        {
+            animator.SetBool("isJump", true);
+        }else
+        {
+            animator.SetBool("isJump", false);
+        }
+
     }
 }
