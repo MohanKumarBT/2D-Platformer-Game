@@ -18,7 +18,17 @@ public class PlayerController : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Jump");
         float crouching = Input.GetAxisRaw("Crouch");
-        
+
+        animator.SetBool("isJump", vertical > 0);
+
+        animator.SetBool("isCrouch", crouching > 0);
+
+    }
+    private void FixedUpdate()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Jump");
+        float crouching = Input.GetAxisRaw("Crouch");
 
         MoveCharacter(horizontal, vertical);
         PlayMovementAnimation(horizontal, vertical, crouching);
@@ -49,9 +59,7 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = scale;
 
-        animator.SetBool("isJump", vertical > 0);
-
-        animator.SetBool("isCrouch", crouching > 0);
+       
     }
 }
 
