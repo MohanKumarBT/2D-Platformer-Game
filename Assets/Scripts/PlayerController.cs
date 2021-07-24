@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public Animator animator;
     public float speed;
+    private float horizontal;
+    private float vertical;
     public float jump;
+    private bool crouching;
     private Rigidbody2D rb2d;
 
     private void Awake()
@@ -15,23 +18,20 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Jump");
-        float crouching = Input.GetAxisRaw("Crouch");
-
-        animator.SetBool("isJump", vertical > 0);
-
-        animator.SetBool("isCrouch", crouching > 0);
-
-    }
+         horizontal = Input.GetAxisRaw("Horizontal");
+         vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            crouching = true;
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+            crouching = false;
+            
+      animator.SetBool("isJump", vertical > 0);
+      animator.SetBool("isCrouch", crouching);
+            }
     private void FixedUpdate()
-    {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Jump");
-        float crouching = Input.GetAxisRaw("Crouch");
-
+    { 
         MoveCharacter(horizontal, vertical);
-        PlayMovementAnimation(horizontal, vertical, crouching);
+        PlayMovementAnimation(horizontal, vertical);
     }
     private void MoveCharacter(float horizontal, float vertical)
     {
@@ -39,13 +39,10 @@ public class PlayerController : MonoBehaviour
         position.x += horizontal * speed * Time.deltaTime;
         transform.position = position;
 
-        if(vertical > 0)
-        {
-            rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
-        }
+        rb2d.AddForce(new Vector2(0f, (vertical*jump)), ForceMode2D.Force);
     }
 
-    private void PlayMovementAnimation(float horizontal, float vertical, float crouching)
+    private void PlayMovementAnimation(float horizontal, float vertical)
     {
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
         Vector3 scale = transform.localScale;
@@ -59,7 +56,8 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = scale;
 
-       
+        
+
     }
 }
 
