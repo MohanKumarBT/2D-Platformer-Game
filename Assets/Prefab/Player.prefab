@@ -42,7 +42,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.15307939, g: 0.754717, b: 0.6950298, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74be3750b9ca114d92f3ecdfdb7bfae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreController: {fileID: 0}
   animator: {fileID: 3025210240217476350}
   speed: 4
   jump: 80
