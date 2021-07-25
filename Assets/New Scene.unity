@@ -121,78 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &769806011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 54390928735045381, guid: 65af99fbcb6b92841b41453e8a4a4113,
-    type: 3}
-  m_PrefabInstance: {fileID: 6497980047907532658}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &769806012 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3025210240217476350, guid: 65af99fbcb6b92841b41453e8a4a4113,
-    type: 3}
-  m_PrefabInstance: {fileID: 6497980047907532658}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &769806015
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769806011}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.014058426, y: 0.9899006}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.42, y: 0.1}
-    oldSize: {x: 3.7534883, y: 2.8325582}
-    newSize: {x: 3.7534883, y: 2.8325582}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.61471117, y: 2.1120105}
-  m_EdgeRadius: 0
---- !u!50 &769806016
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769806011}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &769806017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769806011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74be3750b9ca114d92f3ecdfdb7bfae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 769806012}
 --- !u!1 &1437538333
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +152,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09034686}
+  m_Offset: {x: 0, y: -0.084988415}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -235,7 +163,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.81930625}
+  m_Size: {x: 1, y: 0.83002317}
   m_EdgeRadius: 0
 --- !u!212 &1437538335
 SpriteRenderer:
@@ -295,8 +223,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437538333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -3.14, z: 0}
-  m_LocalScale: {x: 6.946126, y: 1.1381874, z: 1}
+  m_LocalPosition: {x: -0.011, y: -2.955, z: 0}
+  m_LocalScale: {x: 23.456676, y: 2.2072976, z: 1.013}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -354,7 +282,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.0425324
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -396,11 +324,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 54390928735045381, guid: 65af99fbcb6b92841b41453e8a4a4113,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4706964356093270349, guid: 65af99fbcb6b92841b41453e8a4a4113,
         type: 3}
       propertyPath: m_RootOrder
@@ -414,7 +337,7 @@ PrefabInstance:
     - target: {fileID: 4706964356093270349, guid: 65af99fbcb6b92841b41453e8a4a4113,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 4706964356093270349, guid: 65af99fbcb6b92841b41453e8a4a4113,
         type: 3}
