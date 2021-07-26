@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    //public void KillPlayer()
+    //{
+        
+    //}
+
     public void PickUpKey()
     {
         Debug.Log(" Player picked up the key");
