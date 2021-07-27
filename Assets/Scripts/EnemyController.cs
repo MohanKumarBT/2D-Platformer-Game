@@ -13,27 +13,18 @@ public class EnemyController : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetect.position, Vector2.down, 2f);
         Debug.DrawRay(groundDetect.position, Vector2.down, Color.red);
-        if(groundInfo.collider == false)
+        if (groundInfo.collider == false)
         {
-            if(moveright)
+            if (moveright)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
                 moveright = false;
-            }else if (!moveright)
+            }
+            else if (!moveright)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 moveright = true;
             }
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.GetComponent<PlayerController>() != null)
-    //    {
-    //        PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-    //        playerController.KillPlayer();
-
-    //    }
-    //}
 }
