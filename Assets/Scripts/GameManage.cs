@@ -7,10 +7,12 @@ public class GameManage : MonoBehaviour
 {
     [SerializeField] private GameObject Heart1, Heart2, Heart3;
     [SerializeField] private GameObject HeartCanvas;
+    [SerializeField] private GameObject GameOverCanvas;
 
     private void Awake()
     {
         HeartCanvas.SetActive(true);
+        GameOverCanvas.SetActive(false);
         Heart1.gameObject.SetActive(true);
         Heart2.gameObject.SetActive(true);
         Heart3.gameObject.SetActive(true);
@@ -42,7 +44,7 @@ public class GameManage : MonoBehaviour
                 Heart1.gameObject.SetActive(false);
                 Heart2.gameObject.SetActive(false);
                 Heart3.gameObject.SetActive(false);
-                Invoke(nameof(stoptime), 2f);
+                Invoke(nameof(stoptime), 1f);
                 break;
         }
     }
@@ -50,8 +52,7 @@ public class GameManage : MonoBehaviour
     public void stoptime()
     {
         HeartCanvas.SetActive(false);
-        
-        SceneManager.LoadScene("New Scene");
-      
+        GameOverCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 }
