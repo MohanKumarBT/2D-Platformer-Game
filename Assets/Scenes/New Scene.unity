@@ -145,12 +145,12 @@ PrefabInstance:
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.814
+      value: 19.16
       objectReference: {fileID: 0}
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.301
+      value: -1.32
       objectReference: {fileID: 0}
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
@@ -1815,12 +1815,12 @@ PrefabInstance:
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.45
+      value: 12.22
       objectReference: {fileID: 0}
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.31
+      value: -1.19
       objectReference: {fileID: 0}
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
@@ -2459,7 +2459,7 @@ GameObject:
   - component: {fileID: 1515302019}
   - component: {fileID: 1515302018}
   m_Layer: 0
-  m_Name: PlayerDeath
+  m_Name: PlayerDeathfromFalling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

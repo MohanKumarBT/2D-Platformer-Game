@@ -50,8 +50,8 @@ public class GameManage : MonoBehaviour
     public void stoptime()
     {
         HeartCanvas.SetActive(false);
-        Time.timeScale = 0;
+        
         SceneManager.LoadScene("New Scene");
-        Time.timeScale = 1;
+      
     }
 }
