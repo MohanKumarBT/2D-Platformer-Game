@@ -9,7 +9,7 @@ public class LobbyController : MonoBehaviour
     public GameObject buttons;
     public void PlayBtn()
     {
-        //SceneManager.LoadScene("Level1");
+       
         LevelSelection.SetActive(true);
         buttons.SetActive(false);
     }
