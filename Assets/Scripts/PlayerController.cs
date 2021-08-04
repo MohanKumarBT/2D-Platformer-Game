@@ -82,7 +82,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger("dead");
             speed = 0;
-            
         }
     }
 

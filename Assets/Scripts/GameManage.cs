@@ -53,6 +53,5 @@ public class GameManage : MonoBehaviour
     {
         HeartCanvas.SetActive(false);
         GameOverCanvas.SetActive(true);
-        Time.timeScale = 0;
     }
 }

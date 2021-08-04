@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class LobbyController : MonoBehaviour
 {
+    public GameObject LevelSelection;
+    public GameObject buttons;
     public void PlayBtn()
     {
-        SceneManager.LoadScene("New Scene");
-        Time.timeScale = 1;
+        //SceneManager.LoadScene("Level1");
+        LevelSelection.SetActive(true);
+        buttons.SetActive(false);
     }
+ 
+
     public void QuitBtn()
     {
         Application.Quit();

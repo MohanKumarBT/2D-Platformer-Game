@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Groundtilemap
+    uniqueID: 1930410253
+    locked: 0
+  - name: Backgroundrocks
+    uniqueID: 3080441231
+    locked: 0
