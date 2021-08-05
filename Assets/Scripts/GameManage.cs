@@ -55,7 +55,7 @@ public class GameManage : MonoBehaviour
         SoundManager.Instance.PlayMusic(Sounds.PlayerDeath);
         HeartCanvas.SetActive(false);
         GameOverCanvas.SetActive(true);
-        //Time.timeScale = 0;
+        SoundManager.Instance.Play(Sounds.GameOver);
         player.SetActive(false);
     }
 }
