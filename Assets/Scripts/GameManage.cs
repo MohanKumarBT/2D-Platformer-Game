@@ -45,17 +45,18 @@ public class GameManage : MonoBehaviour
                 Heart1.gameObject.SetActive(false);
                 Heart2.gameObject.SetActive(false);
                 Heart3.gameObject.SetActive(false);
-                Invoke(nameof(stoptime), 1f);
+                StartCoroutine(stoptime());
                 break;
         }
     }
 
-    public void stoptime()
+    public IEnumerator stoptime()
     {
-        SoundManager.Instance.PlayMusic(Sounds.PlayerDeath);
+        SoundManager.Instance.Play(Sounds.PlayerDeath);
         HeartCanvas.SetActive(false);
         GameOverCanvas.SetActive(true);
-        SoundManager.Instance.Play(Sounds.GameOver);
         player.SetActive(false);
+        yield return new WaitForSeconds(0.5f);
+        SoundManager.Instance.Play(Sounds.GameOver);
     }
 }
