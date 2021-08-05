@@ -8,6 +8,7 @@ public class GameManage : MonoBehaviour
     [SerializeField] private GameObject Heart1, Heart2, Heart3;
     [SerializeField] private GameObject HeartCanvas;
     [SerializeField] private GameObject GameOverCanvas;
+    [SerializeField] public GameObject player;
 
     private void Awake()
     {
@@ -51,7 +52,10 @@ public class GameManage : MonoBehaviour
 
     public void stoptime()
     {
+        SoundManager.Instance.PlayMusic(Sounds.PlayerDeath);
         HeartCanvas.SetActive(false);
         GameOverCanvas.SetActive(true);
+        //Time.timeScale = 0;
+        player.SetActive(false);
     }
 }

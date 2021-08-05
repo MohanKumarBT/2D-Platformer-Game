@@ -352,6 +352,7 @@ MonoBehaviour:
   Heart3: {fileID: 1215449737}
   HeartCanvas: {fileID: 1001326997}
   GameOverCanvas: {fileID: 2012255545}
+  player: {fileID: 6497980047907532659}
 --- !u!4 &199849704
 Transform:
   m_ObjectHideFlags: 0
@@ -480,8 +481,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score : 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e85f1cf0bfd4d1447bed2bc737c47be7, type: 2}
+  m_sharedMaterial: {fileID: 21069318434546836, guid: e85f1cf0bfd4d1447bed2bc737c47be7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -523,7 +525,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -992,8 +994,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Level 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e85f1cf0bfd4d1447bed2bc737c47be7, type: 2}
+  m_sharedMaterial: {fileID: 21069318434546836, guid: e85f1cf0bfd4d1447bed2bc737c47be7,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1018,8 +1021,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1035,7 +1038,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -1357,6 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1387ef4b374f664f923feb69e2908be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenename: LobbyScene
 --- !u!61 &1286536546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1797,7 +1801,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515302017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.21, y: -11.27, z: -5.0876503}
+  m_LocalPosition: {x: 21.13, y: -17.5, z: -5.0876503}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1493799286}
@@ -5016,6 +5020,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65af99fbcb6b92841b41453e8a4a4113, type: 3}
+--- !u!1 &6497980047907532659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 54390928735045381, guid: 65af99fbcb6b92841b41453e8a4a4113,
+    type: 3}
+  m_PrefabInstance: {fileID: 6497980047907532658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6787160905635502652
 PrefabInstance:
   m_ObjectHideFlags: 0

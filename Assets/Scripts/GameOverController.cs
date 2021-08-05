@@ -7,14 +7,18 @@ public class GameOverController : MonoBehaviour
 {
     public void RestartBtn(string scene)
     {
-        SceneManager.LoadScene(scene); 
+        SoundManager.Instance.Play(Sounds.ButtonClick);
+        SceneManager.LoadScene(scene);
+        Time.timeScale = 1;
     }
     public void Lobbybtn()
     {
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         SceneManager.LoadScene("LobbyScene");
     }
     public void QuitBtn()
     {
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         Application.Quit();
     }
 }
