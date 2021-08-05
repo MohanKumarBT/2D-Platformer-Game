@@ -1,54 +1,56 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ScoreController scoreController;
     public Animator animator;
     public float speed;
+    private float horizontal;
+    private float vertical;
     public float jump;
+    private bool crouching;
     private Rigidbody2D rb2d;
+    [SerializeField] private GameManage gamemanager;
+    public float health;
 
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
 
+       public void PickUpKey()
+    {
+        scoreController.IncreaseScore(10);
+    }
+
     private void Update()
     {
-
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Jump");
-
+         horizontal = Input.GetAxisRaw("Horizontal");
+         vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            crouching = true;
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+            crouching = false;
+            
+      animator.SetBool("isJump", vertical > 0);
+      animator.SetBool("isCrouch", crouching);
+        CheckHealth();
+    }
+    private void FixedUpdate()
+    { 
         MoveCharacter(horizontal, vertical);
         PlayMovementAnimation(horizontal, vertical);
-
-        
-        // Code to make crouch animation 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            animator.SetBool("isCrouch", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            animator.SetBool("isCrouch", false);
-        }
     }
     private void MoveCharacter(float horizontal, float vertical)
     {
-        //move character horizontally
         Vector3 position = transform.position;
-        // if a = a + b, then it cas also be written as a += b
-        position.x += horizontal * speed * Time.deltaTime; // (Distance/Sec) * (1/30/sec)
+        position.x += horizontal * speed * Time.deltaTime;
         transform.position = position;
 
-        //move character vertically
-        if(vertical > 0)
-        {
-            rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Force);
-        }
-
-
+        rb2d.AddForce(new Vector2(0f, (vertical*jump)), ForceMode2D.Force);
     }
 
     private void PlayMovementAnimation(float horizontal, float vertical)
@@ -64,19 +66,24 @@ public class PlayerController : MonoBehaviour
             scale.x = Mathf.Abs(scale.x);
         }
         transform.localScale = scale;
-
-
-        // Code to make jump animation
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        if (vertical > 0)
-        {
-            animator.SetBool("isJump", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            animator.SetBool("isJump", false);
-        }
-
     }
+
+        private void OnCollisionEnter2D (Collision2D collision)
+        {
+            if (collision.gameObject.GetComponent<EnemyController>() != null)
+            {
+                health -= 1;
+                gamemanager.Heart(health);
+            }
+        }
+    private void CheckHealth()
+    {
+        if (health <= 0)
+        {
+            animator.SetTrigger("dead");
+            speed = 0;
+        }
+    }
+
 }
+
