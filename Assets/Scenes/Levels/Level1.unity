@@ -128,15 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493799286}
     m_Modifications:
-    - target: {fileID: 1814801537, guid: 20672e9ee3554334ca693e0922c0d7f7, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000419853690073175, guid: 20672e9ee3554334ca693e0922c0d7f7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
       propertyPath: m_RootOrder
@@ -196,11 +187,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402569788903914052, guid: 20672e9ee3554334ca693e0922c0d7f7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20672e9ee3554334ca693e0922c0d7f7, type: 3}
@@ -858,15 +844,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1493799286}
     m_Modifications:
-    - target: {fileID: 1814801537, guid: 20672e9ee3554334ca693e0922c0d7f7, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000419853690073175, guid: 20672e9ee3554334ca693e0922c0d7f7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1616387412732769867, guid: 20672e9ee3554334ca693e0922c0d7f7,
         type: 3}
       propertyPath: m_RootOrder
@@ -926,11 +903,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402569788903914052, guid: 20672e9ee3554334ca693e0922c0d7f7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20672e9ee3554334ca693e0922c0d7f7, type: 3}
@@ -1357,7 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1387ef4b374f664f923feb69e2908be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: Level1
 --- !u!61 &1286536546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1371,7 +1342,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.20424543, y: 1.6857923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1382,7 +1353,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0390022, y: 3.6413186}
   m_EdgeRadius: 0
 --- !u!4 &1286536547
 Transform:
