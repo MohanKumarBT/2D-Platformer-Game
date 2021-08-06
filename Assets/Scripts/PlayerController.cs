@@ -13,15 +13,22 @@ public class PlayerController : MonoBehaviour
     public float jump;
     private bool crouching;
     private Rigidbody2D rb2d;
+    [SerializeField] private GameManage gamemanager;
+    [SerializeField] public float health;
 
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
 
+    //public void KillPlayer()
+    //{
+    //    Debug.Log("Player killed by the Enemy");
+       
+    //}
+
     public void PickUpKey()
     {
-        Debug.Log(" Player picked up the key");
         scoreController.IncreaseScore(10);
     }
 
@@ -36,7 +43,8 @@ public class PlayerController : MonoBehaviour
             
       animator.SetBool("isJump", vertical > 0);
       animator.SetBool("isCrouch", crouching);
-            }
+        CheckHealth();
+    }
     private void FixedUpdate()
     { 
         MoveCharacter(horizontal, vertical);
@@ -64,9 +72,24 @@ public class PlayerController : MonoBehaviour
             scale.x = Mathf.Abs(scale.x);
         }
         transform.localScale = scale;
-
-        
-
     }
+
+        private void OnCollisionEnter2D (Collision2D collision)
+        {
+            if (collision.gameObject.GetComponent<EnemyController>() != null)
+            {
+                health -= 1;
+                gamemanager.Heart(health);
+            }
+        }
+    private void CheckHealth()
+    {
+        if (health < 0)
+        {
+            animator.SetTrigger("dead");
+            speed = 0;
+        }
+    }
+
 }
 
