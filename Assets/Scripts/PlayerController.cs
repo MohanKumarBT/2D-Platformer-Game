@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ScoreController scoreController;
     public Animator animator;
     public float speed;
     private float horizontal;
@@ -16,6 +18,13 @@ public class PlayerController : MonoBehaviour
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
+
+    public void PickUpKey()
+    {
+        Debug.Log(" Player picked up the key");
+        scoreController.IncreaseScore(10);
+    }
+
     private void Update()
     {
          horizontal = Input.GetAxisRaw("Horizontal");
