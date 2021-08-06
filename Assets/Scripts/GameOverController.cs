@@ -9,6 +9,7 @@ public class GameOverController : MonoBehaviour
     {
         SoundManager.Instance.Play(Sounds.ButtonClick);
         SceneManager.LoadScene(scene);
+        //SoundManager.Instance.Play(Sounds.LevelEntry);
         Time.timeScale = 1;
     }
     public void Lobbybtn()

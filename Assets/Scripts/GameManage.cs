@@ -56,7 +56,7 @@ public class GameManage : MonoBehaviour
         HeartCanvas.SetActive(false);
         GameOverCanvas.SetActive(true);
         player.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.8f);
         SoundManager.Instance.Play(Sounds.GameOver);
     }
 }
