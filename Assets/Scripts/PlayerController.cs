@@ -14,20 +14,14 @@ public class PlayerController : MonoBehaviour
     private bool crouching;
     private Rigidbody2D rb2d;
     [SerializeField] private GameManage gamemanager;
-    [SerializeField] public float health;
+    public float health;
 
     private void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    //public void KillPlayer()
-    //{
-    //    Debug.Log("Player killed by the Enemy");
-       
-    //}
-
-    public void PickUpKey()
+       public void PickUpKey()
     {
         scoreController.IncreaseScore(10);
     }
@@ -84,7 +78,7 @@ public class PlayerController : MonoBehaviour
         }
     private void CheckHealth()
     {
-        if (health < 0)
+        if (health <= 0)
         {
             animator.SetTrigger("dead");
             speed = 0;
