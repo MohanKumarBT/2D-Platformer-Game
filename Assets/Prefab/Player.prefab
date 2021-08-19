@@ -358,7 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreController: {fileID: 0}
   animator: {fileID: 3025210240217476350}
-  speed: 8
+  speed: 10
   jump: 1000
   gamemanager: {fileID: 0}
   health: 3

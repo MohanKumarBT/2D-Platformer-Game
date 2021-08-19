@@ -10,7 +10,7 @@ public class WaypointPlatformer : MonoBehaviour
     
    private void Update()
     {
-        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f) 
         {
             currentWaypointIndex++;
             if(currentWaypointIndex >= waypoints.Length)

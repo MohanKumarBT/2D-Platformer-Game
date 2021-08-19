@@ -466,9 +466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fe207dc1bf7254aa3967dc521bf684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heart1: {fileID: 1191418065}
-  Heart2: {fileID: 701931062}
-  Heart3: {fileID: 1215449737}
+  Hearts:
+  - {fileID: 1191418065}
+  - {fileID: 701931062}
+  - {fileID: 1215449737}
   HeartCanvas: {fileID: 1001326997}
   GameOverCanvas: {fileID: 1033497478}
   player: {fileID: 6497980047907532659}

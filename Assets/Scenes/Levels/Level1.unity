@@ -334,9 +334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fe207dc1bf7254aa3967dc521bf684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heart1: {fileID: 343669777}
-  Heart2: {fileID: 343669776}
-  Heart3: {fileID: 343669775}
+  Hearts:
+  - {fileID: 343669777}
+  - {fileID: 343669776}
+  - {fileID: 343669775}
   HeartCanvas: {fileID: 343669774}
   GameOverCanvas: {fileID: 1816652613}
   player: {fileID: 432727744}
@@ -1031,7 +1032,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.46616834, y: 2.5604558}
+  m_Offset: {x: 0.23586321, y: 2.8787904}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1042,7 +1043,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8145126, y: 5.390645}
+  m_Size: {x: 2.275123, y: 6.027314}
   m_EdgeRadius: 0
 --- !u!4 &1286536547
 Transform:
@@ -1492,6 +1493,7 @@ GameObject:
   - component: {fileID: 1764613508}
   - component: {fileID: 1764613507}
   - component: {fileID: 1764613509}
+  - component: {fileID: 1764613510}
   m_Layer: 10
   m_Name: GroundTilemap
   m_TagString: Untagged
@@ -7416,11 +7418,30 @@ TilemapCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!251 &1764613510
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764613505}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1816652613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5152549764580849256, guid: 48192eeee300d1b4c98b633ced9a0769,
@@ -8068,6 +8089,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 769806017, guid: 65af99fbcb6b92841b41453e8a4a4113, type: 3}
+      propertyPath: jump
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 769806017, guid: 65af99fbcb6b92841b41453e8a4a4113, type: 3}
       propertyPath: gamemanager
       value: 
       objectReference: {fileID: 199849703}
@@ -8088,12 +8113,12 @@ PrefabInstance:
     - target: {fileID: 4706964356093270349, guid: 65af99fbcb6b92841b41453e8a4a4113,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: 3.4
       objectReference: {fileID: 0}
     - target: {fileID: 4706964356093270349, guid: 65af99fbcb6b92841b41453e8a4a4113,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -1.97
       objectReference: {fileID: 0}
     - target: {fileID: 4706964356093270349, guid: 65af99fbcb6b92841b41453e8a4a4113,
         type: 3}

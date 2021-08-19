@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool crouching;
     private Rigidbody2D rb2d;
     [SerializeField] private GameManage gamemanager;
-    public float health;
+    public int health;
     [SerializeField] private LayerMask Groundlayer;
     [SerializeField] private Transform GroundCheck;
     private bool isGrounded;
