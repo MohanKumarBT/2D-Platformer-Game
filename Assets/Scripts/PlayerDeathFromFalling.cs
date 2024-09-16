@@ -10,7 +10,9 @@ public class PlayerDeathFromFalling : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            gameManage.stoptime();
+           
+            gameManage.StartCoroutine("stoptime");
+
         }
     }
 }

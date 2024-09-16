@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     private bool moveright = true;
     public Transform groundDetect;
+    [SerializeField] private float enemyhealth;
 
     private void Update()
     {
@@ -25,6 +26,14 @@ public class EnemyController : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, 0);
                 moveright = true;
             }
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        enemyhealth -= damage;
+        if(enemyhealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

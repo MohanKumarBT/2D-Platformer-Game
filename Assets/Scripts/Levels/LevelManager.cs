@@ -32,10 +32,6 @@ public class LevelManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
         SetLevelStatus(currentScene.name, LevelStatus.Completed);
-
-        //int nextSceneIndex = currentScene.buildIndex + 1;
-        //Scene nextScene = SceneManager.GetSceneByBuildIndex(nextSceneIndex);
-        //SetLevelStatus(nextScene.name, LevelStatus.Unlocked);
         int currentSceneIndex = Array.FindIndex(Levels, level => level == currentScene.name);
         int nextSceneIndex = currentSceneIndex + 1;
         if(nextSceneIndex < Levels.Length)
@@ -51,6 +47,6 @@ public class LevelManager : MonoBehaviour
     public void SetLevelStatus(string level, LevelStatus levelStatus)
     {
         PlayerPrefs.SetInt(level, (int)levelStatus);
-        Debug.Log("Setting Level : " + level + " Status : " + levelStatus);
+    //    Debug.Log("Setting Level : " + level + " Status : " + levelStatus);
     }
 }

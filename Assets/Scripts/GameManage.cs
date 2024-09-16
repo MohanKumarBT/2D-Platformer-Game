@@ -5,53 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class GameManage : MonoBehaviour
 {
-    [SerializeField] private GameObject Heart1, Heart2, Heart3;
+    [SerializeField] private GameObject[] Hearts;
     [SerializeField] private GameObject HeartCanvas;
     [SerializeField] private GameObject GameOverCanvas;
+    [SerializeField] public GameObject player;
 
     private void Awake()
     {
         HeartCanvas.SetActive(true);
         GameOverCanvas.SetActive(false);
-        Heart1.gameObject.SetActive(true);
-        Heart2.gameObject.SetActive(true);
-        Heart3.gameObject.SetActive(true);
+        for (int i = 0; i < Hearts.Length; i++)
+        {
+            Hearts[i].SetActive(true);
+        }
     }
-    public void Heart(float health)
+    public void Heart(int health)
     {
         if (health > 3)
         {
             health = 3;
         }
-        switch (health)
+        if (health > 0)
         {
-            case 3:
-                Heart1.gameObject.SetActive(true);
-                Heart2.gameObject.SetActive(true);
-                Heart3.gameObject.SetActive(true);
-                break;
-            case 2:
-                Heart1.gameObject.SetActive(true);
-                Heart2.gameObject.SetActive(true);
-                Heart3.gameObject.SetActive(false);
-                break;
-            case 1:
-                Heart1.gameObject.SetActive(true);
-                Heart2.gameObject.SetActive(false);
-                Heart3.gameObject.SetActive(false);
-                break;
-            case 0:
-                Heart1.gameObject.SetActive(false);
-                Heart2.gameObject.SetActive(false);
-                Heart3.gameObject.SetActive(false);
-                Invoke(nameof(stoptime), 1f);
-                break;
+            Hearts[(Hearts.Length - health - 1)].SetActive(false);
+        }
+        else
+        {
+            StartCoroutine(stoptime());
         }
     }
 
-    public void stoptime()
+    public IEnumerator stoptime()
     {
+        SoundManager.Instance.Play(Sounds.PlayerDeath);
         HeartCanvas.SetActive(false);
         GameOverCanvas.SetActive(true);
+        player.SetActive(false);
+        yield return new WaitForSeconds(0.8f);
+        SoundManager.Instance.Play(Sounds.GameOver);
     }
 }

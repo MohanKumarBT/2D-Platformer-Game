@@ -9,14 +9,16 @@ public class LobbyController : MonoBehaviour
     public GameObject buttons;
     public void PlayBtn()
     {
-       
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         LevelSelection.SetActive(true);
         buttons.SetActive(false);
+       
     }
  
 
     public void QuitBtn()
     {
+        SoundManager.Instance.Play(Sounds.ButtonClick);
         Application.Quit();
     }
 }
